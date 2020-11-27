@@ -22,7 +22,7 @@ public class SurveyDaoImpl implements SurveyDao {
 	@Override
 	public void insertSurvey(Survey survey) {
 		jdbcTemplate.update("INSERT INTO survey(age, satisfaction, comment, created) VALUES(?, ?, ?, ?)",
-				new Object[] { survey.getAge(), survey.getSatisfaction(), survey.getComment(), survey.getCreated() });
+				survey.getAge(), survey.getSatisfaction(), survey.getComment(), survey.getCreated() );
 		
 	}
 
